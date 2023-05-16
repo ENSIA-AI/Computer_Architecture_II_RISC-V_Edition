@@ -1,4 +1,21 @@
-addi a0, x0, 5
+.data
+msg1: .string "This code computes the sum of squares n^2 + (n-1)^2 + (n-2)^2 + .... + 1 \n"
+msg2: .string "Enter a value for n:   "
+msg3: .string "The result is:   "
+
+.text
+
+la a0, msg1
+li a7, 4
+ecall
+
+la a0, msg2
+li a7, 4
+ecall
+
+li a7, 5
+ecall
+#addi a0, x0, 5
 jal ra, sumSquare
 j print
 sumSquare: addi sp, sp -12 # Make space for 3 words on the stack
